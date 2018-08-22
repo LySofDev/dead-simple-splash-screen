@@ -22,6 +22,7 @@ describe('HealthService', () => {
 
   describe(".isUp", () => {
     describe('given a single url', () => {
+
       describe('when the service is up', () => {
         it('returns true', (done: DoneFn) => {
 
@@ -55,6 +56,7 @@ describe('HealthService', () => {
           httpMock.verify();
         });
       });
+      
     });
   });
 });
