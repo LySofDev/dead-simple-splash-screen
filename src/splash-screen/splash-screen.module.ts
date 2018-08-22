@@ -17,4 +17,4 @@ import { HealthService } from './health.service';
     HealthService
   ]
 })
-export class DeadSimpleSplashScreen {}
+export class DeadSimpleSplashScreenModule {}
