@@ -20,19 +20,41 @@ describe('HealthService', () => {
     httpMock = TestBed.get(HttpTestingController);
   });
 
-  it('return true if service is up', (done) => {
+  describe(".isUp", () => {
+    describe('given a single url', () => {
+      describe('when the service is up', () => {
+        it('returns true', (done: DoneFn) => {
 
-    healthService
-      .isUp('http://localhost:3000/status')
-      .subscribe((res: any) => {
-        expect(res).toBe(true);
-        done();
+          healthService
+            .isUp('http://localhost:3000/status')
+            .subscribe((res: boolean) => {
+              expect(res).toBe(true);
+              done();
+            });
+
+          let healthRequest = httpMock.expectOne('http://localhost:3000/status');
+          healthRequest.flush({});
+
+          httpMock.verify();
+        });
       });
 
-    let healthRequest = httpMock.expectOne('http://localhost:3000/status');
-    healthRequest.flush({});
+      describe('when the service is down', () => {
+        it('returns false', (done: DoneFn) => {
 
-    httpMock.verify();
+          healthService
+            .isUp('http://localhost:3000/status')
+            .subscribe((res: boolean) => {
+              expect(res).toBe(false);
+              done();
+            });
+
+          let healthRequest = httpMock.expectOne('http://localhost:3000/status');
+          healthRequest.error(new ErrorEvent('Service is down.'));
+
+          httpMock.verify();
+        });
+      });
+    });
   });
-
 });
