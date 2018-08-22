@@ -20,6 +20,9 @@ describe('HealthService', () => {
     httpMock = TestBed.get(HttpTestingController);
   });
 
+  /**
+  * HealthService.isUp(url: string): Observable<boolean>
+  */
   describe(".isUp", () => {
     describe('given a single url', () => {
 
@@ -56,7 +59,7 @@ describe('HealthService', () => {
           httpMock.verify();
         });
       });
-      
+
     });
   });
 });

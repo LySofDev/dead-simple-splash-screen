@@ -1,8 +1,15 @@
 import { storiesOf } from '@storybook/angular';
+import { SplashScreenComponent, HealthService } from '../dead-simple-splash-screen';
 
-
-
-// storiesOf('Welcome', module).add('to Storybook', () => ({
-//   component: Welcome,
-//   props: {},
-// }));
+storiesOf('Splash Screen', module)
+  .add('default', () => ({
+    component: SplashScreenComponent,
+    // props: {
+    //   url: 'http://localhost:3000/status'
+    // },
+    // moduleMetadata: {
+    //   providers: [
+    //     HealthService
+    //   ]
+    // }
+  }));
