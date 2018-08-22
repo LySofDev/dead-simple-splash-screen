@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { SplashScreenComponent } from './splash-screen.component';
 import { HealthService } from './health.service';
 
@@ -11,7 +12,8 @@ import { HealthService } from './health.service';
     SplashScreenComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     HealthService
