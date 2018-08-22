@@ -20,6 +20,9 @@
                 "cmp"
             ],
             "kebab-case"
+        ],
+        "experimentalDecorators": [
+          true
         ]
     }
 }
