@@ -9,6 +9,6 @@
 /**
  * Entry point for all public APIs of the package.
  */
-export * from './src/angular-library-starter';
+export * from './src/dead-simple-splash-screen';
 
 // This file only reexports content of the `src` folder. Keep it that way.

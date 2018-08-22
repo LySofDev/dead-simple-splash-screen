@@ -1,16 +1,16 @@
 {
-  "name": "angular-library-starter",
+  "name": "dead-simple-splash-screen",
   "private": true,
   "version": "0.0.1",
-  "description": "Build an Angular library compatible with AoT compilation and Tree shaking like an official package",
-  "main": "./bundles/angular-library-starter.umd.js",
-  "module": "./fesm5/angular-library-starter.js",
-  "es2015": "./fesm2015/angular-library-starter.js",
-  "esm5": "./esm5/angular-library-starter.js",
-  "esm2015": "./esm2015/angular-library-starter.js",
-  "fesm5": "./fesm5/angular-library-starter.js",
-  "fesm2015": "./fesm2015/angular-library-starter.js",
-  "typings": "./angular-library-starter.d.ts",
+  "description": "Block the application with an attractive splash screen while the services are verified.",
+  "main": "./bundles/dead-simple-splash-screen.umd.js",
+  "module": "./fesm5/dead-simple-splash-screen.js",
+  "es2015": "./fesm2015/dead-simple-splash-screen.js",
+  "esm5": "./esm5/dead-simple-splash-screen.js",
+  "esm2015": "./esm2015/dead-simple-splash-screen.js",
+  "fesm5": "./fesm5/dead-simple-splash-screen.js",
+  "fesm2015": "./fesm2015/dead-simple-splash-screen.js",
+  "typings": "./dead-simple-splash-screen.d.ts",
   "scripts": {
     "build": "node build.js",
     "test": "karma start",
@@ -26,12 +26,12 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/robisim74/angular-library-starter.git"
+    "url": "https://github.com/lysofdev/dead-simple-splash-screen.git"
   },
   "bugs": {
-    "url": "https://github.com/robisim74/angular-library-starter/issues"
+    "url": "https://github.com/lysofdev/dead-simple-splash-screen/issues"
   },
-  "homepage": "https://github.com/robisim74/angular-library-starter",
+  "homepage": "https://github.com/lysofdev/dead-simple-splash-screen",
   "keywords": [
     "angular",
     "javascript",
