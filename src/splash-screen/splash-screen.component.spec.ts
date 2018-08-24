@@ -15,6 +15,7 @@ class MockHealthService {
 
 describe('SplashScreenComponent', () => {
 
+  let healthService: HealthService;
   let fixture: ComponentFixture<SplashScreenComponent>;
   let component: SplashScreenComponent;
   let element: HTMLElement;
@@ -30,6 +31,7 @@ describe('SplashScreenComponent', () => {
         ]
       })
       .compileComponents();
+      healthService = TestBed.get(HealthService);
       fixture = TestBed.createComponent(SplashScreenComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
@@ -38,10 +40,9 @@ describe('SplashScreenComponent', () => {
   describe('when mounted', () => {
 
     it('will call the isUp method on the HealthService', async(() => {
-      let healtService = TestBed.get(HealthService);
-      spyOn(healtService, 'isUp').and.callThrough();
+      spyOn(healthService, 'isUp').and.callThrough();
       component.ngOnInit();
-      expect(healtService.isUp).toHaveBeenCalled();
+      expect(healthService.isUp).toHaveBeenCalled();
     }));
 
   });
