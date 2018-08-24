@@ -1,9 +1,17 @@
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { Observable, of } from 'rxjs';
 
 import { HealthService } from './health.service';
 import { SplashScreenComponent } from './splash-screen.component';
+
+@Injectable()
+class MockHealthService {
+  isUp(url: string): Observable<boolean> {
+    return of(true);
+  }
+}
 
 describe('SplashScreenComponent', () => {
 
@@ -12,19 +20,30 @@ describe('SplashScreenComponent', () => {
   let element: HTMLElement;
 
   beforeEach(async () => {
-    TestBed.configureTestingModule({
-      imports: [],
-      providers: [
-        HealthService
-      ],
-      declarations: [
-        SplashScreenComponent
-      ]
-    }).compileComponents();
+    TestBed
+      .configureTestingModule({
+        declarations: [
+          SplashScreenComponent
+        ],
+        providers: [
+          { provide: HealthService, useClass: MockHealthService }
+        ]
+      })
+      .compileComponents();
+      fixture = TestBed.createComponent(SplashScreenComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+  });
 
-    fixture = TestBed.createComponent(SplashScreenComponent);
-    component = fixture.componentInstance;
-    element = fixture.debugElement.nativeElement;
+  describe('when mounted', () => {
+
+    it('will call the isUp method on the HealthService', async(() => {
+      let healtService = TestBed.get(HealthService);
+      spyOn(healtService, 'isUp').and.callThrough();
+      component.ngOnInit();
+      expect(healtService.isUp).toHaveBeenCalled();
+    }));
+
   });
 
 });
