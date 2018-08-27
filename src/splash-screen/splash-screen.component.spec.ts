@@ -34,7 +34,6 @@ describe('SplashScreenComponent', () => {
   let element: HTMLElement;
 
   function configureTestBed(config: TestBedConfiguration) {
-    // Configure the Test module
     TestBed
       .configureTestingModule({
         declarations: [
