@@ -77,6 +77,18 @@ describe('SplashScreenComponent', () => {
       expect(component.errors.length).toEqual(0);
     });
 
+    it('should have an undefined animationInterval', () => {
+      expect(component.animationInterval).toBeUndefined();
+    });
+
+    it('should have a 0 animationCounter', () => {
+      expect(component.animationCounter).toEqual(0);
+    });
+
+    it('should have an empty ellipseAnimation', () => {
+      expect(component.ellipseAnimation).toEqual("");
+    });
+
   });
 
   describe('when HealthService.isUp resolves to true', () => {

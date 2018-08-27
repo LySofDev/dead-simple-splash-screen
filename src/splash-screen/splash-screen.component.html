@@ -1,3 +1,10 @@
-<main *ngIf="loading" class="dead-simple-splash-screen">
-  <div class="banner">Loading...</div>
+<main
+  *ngIf="loading"
+  [ngStyle]="{'background-color': backgroundColor}"
+  class="dead-simple-splash-screen">
+
+  <div [ngStyle]="{'color': textColor}" class="banner">
+    Loading{{ellipseAnimation}}
+  </div>
+
 </main>
